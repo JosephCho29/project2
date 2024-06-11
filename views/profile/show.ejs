@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Show Page</title>
+  </head>
+  <body>
+    <h1><%= profile.name %></h1>
+    <h1><%= profile.age %></h1>
+    <h1><%= profile.breed %></h1>
+    <h1><%= profile.likesAndDislikes %></h1>
+    <h1><% if (profile.friendlyToStrangers) { %>
+        <p>This Woof is friendly to strangers!!</p>
+      <% } else { %>
+        <p>This woof is not friendly yet!</p>
+      <% } %></h1>
+      <form action="/profile/<%=profile._id%>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= profile.name %></button>
+      </form>
+  </body>
+</html>

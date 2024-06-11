@@ -1,0 +1,44 @@
+<!-- views/fruits/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile Index</title>
+  </head>
+  <a href="/">Home</a>
+  <a href="/auth/sign-in">Reservations</a>
+  <a href="/profile/new">Sign up</a>
+  <a href="/auth/sign-in">Sign in</a>
+  <body>
+    <h1>Your Woof's Profile</h1>
+    <ul>
+      <% profile.forEach(profile => { %>
+        <li>
+            <a href="/profile/<%= profile._id %>"> <%= profile.name %> </a>
+        </li>
+      <% }); %>
+      <% profile.forEach(profile => { %>
+        <li>
+            <a href="/profile/<%= profile._id %>"> <%= profile.age %> </a>
+        </li>
+      <% }); %>
+      <% profile.forEach(profile => { %>
+        <li>
+            <a href="/profile/<%= profile._id %>"> <%= profile.breed %> </a>
+        </li>
+      <% }); %>
+      <% profile.forEach(profile => { %>
+        <li>
+            <a href="/profile/<%= profile._id %>"> <%= profile.likesAndDislikes %> </a>
+        </li>
+      <% }); %>
+      <% profile.forEach(profile => { %>
+        <li>
+            <a href="/profile/<%= profile._id %>"> <%= profile.friendlyToStrangers %> </a>
+        </li>
+      <% }); %>
+    </ul>
+  </body>
+</html>
