@@ -59,10 +59,34 @@ app.get("/profile/:profileId", async (req, res) => {
 
 
 
+app.get("/profile/:profileId/edit", async (req, res) => {
+  const foundProfile = await Profile.findById(req.params.profileId);
+  res.render("profile/edit.ejs", {
+    profile: foundProfile,
+  })
+});
 
+app.get("/profiles/:profileId/edit", async (req, res) => {
+  const foundProfile = await Profile.findById(req.params.profileId);
+  res.render("profiles/edit.ejs", {
+    profile: foundProfile,
+  });
+});
 
+app.put("/profile/:profileId", async (req, res) => {
+  // Handle the 'isReadyToEat' checkbox data
+  if (req.body.friendlyToStrangers === "on") {
+    req.body.friendlyToStrangers = true;
+  } else {
+    req.body.friendlyToStrangers = false;
+  }
+  
+  // Update the profile in the database
+  await Profile.findByIdAndUpdate(req.params.profileId, req.body);
 
-
+  // Redirect to the profile's show page to see the updates
+  res.redirect(`/profile/${req.params.profileId}`);
+});
 
 
 app.delete("/profile/:profileId", async (req, res) => {

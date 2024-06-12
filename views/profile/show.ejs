@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profile Show Page</title>
   </head>
+  <a href="/">Home</a>
+  <a href="">Sign out</a>
   <body>
     <h1><%= profile.name %></h1>
     <h1><%= profile.age %></h1>
@@ -18,5 +20,6 @@
       <form action="/profile/<%=profile._id%>?_method=DELETE" method="POST">
         <button type="submit">Delete <%= profile.name %></button>
       </form>
+      <a href="/profile/<%= profile._id %>/edit">Edit <%= profile.name %></a>
   </body>
 </html>
