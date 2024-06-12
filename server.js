@@ -7,7 +7,8 @@ const methodOverride = require("method-override");
 const morgan = require("morgan");
 const app = express();
 
-// const applicationsController = require('./controllers/applications.js');
+const authController = require('./controllers/auth.js');
+const session = require('express-session');
 
 mongoose.connect(process.env.MONGODB_URI);
 mongoose.connection.on("connected", () => {
@@ -21,11 +22,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(methodOverride("_method")); 
 app.use(morgan("dev"));
 
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
 app.get("/", async (req, res) => {
   res.render("index.ejs", {
-      // user: req.session.user,
+      user: req.session.user,
   });
 });
+
+app.use('/auth', authController);
 
 app.get('/profile', async (req, res) => {
   const allProfile = await Profile.find();
