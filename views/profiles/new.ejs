@@ -7,12 +7,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add a New App</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
         <h1>Pick a date and time!</h1>
-        <form action="/users/<%= user._id %>/profiles" method="POST">
+        <form action="/users/<%= user._id %>/profiles" method="PUT">
+            
+            <label for="date">Date:</label>
+            <select id="date" name="date">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturyda">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+
             <label for="time">Time:</label>
             <select id="time" name="time">
                 <option value="0700">0700</option>
@@ -31,14 +44,6 @@
                 <option value="2000">2000</option>
             </select>
 
-            <label for="date">Date:</label>
-            <select id="date" name="date">
-                <option value="interested">Interested</option>
-                <option value="applied">Applied</option>
-                <option value="interviewing">Interviewing</option>
-                <option value="rejected">Rejected</option>
-                <option value="accepted">Accepted</option>
-            </select>
             <button type="submit">Add profile</button>
         </form>
 </body>

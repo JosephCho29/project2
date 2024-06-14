@@ -1,0 +1,183 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1c40f;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    background-color: #f1c40f;
+    width: 100%;
+    /* Ensure header takes full width */
+    height: 450px;
+    box-sizing: border-box;
+    /* Include padding and border in element's total width and height */
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    /* Align items vertically centered */
+    gap: 20%;
+    /* Space between elements */
+    margin-top: 4rem;
+    /* Lower the header container */
+    width: 100%;
+    justify-content: center;
+    /* Center content horizontally */
+}
+
+.logo {
+    align-self: flex-start;
+    /* Align the logo to the start (left) */
+    margin-bottom: 20px;
+    /* Add space below the logo */
+}
+
+.logo img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    /* Makes the image round */
+    object-fit: cover;
+    /* Ensures the image covers the given dimensions */
+}
+
+.homeCaption {
+    font-family: 'Lobster', sans-serif;
+    /* Change to a more vibrant font */
+    font-size: 1.5em;
+    /* Increase font size */
+    color: white;
+    /* Vibrant color for the text */
+    align-self: center;
+    /* Center the caption */
+    max-width: 600px;
+    /* Optional: Limit the width of the caption for better readability */
+}
+
+nav {
+    margin-top: 10px;
+    /* Adjust the value to move the navbar higher on the page */
+    padding: 10px 20px;
+    /* Add padding around the navbar */
+    display: flex;
+    justify-content: flex-end;
+    /* Align the navbar to the right */
+    gap: 2rem;
+    /* Space out the links */
+    margin-right: 3rem;
+}
+
+nav a {
+    margin: 0 10px;
+    /* Add margin to each link for additional spacing */
+    text-decoration: none;
+    /* Remove underline from links */
+    color: inherit;
+    /* Ensure link color matches surrounding text */
+}
+
+nav a:hover {
+    text-decoration: underline;
+    /* Optional: Add underline on hover */
+}
+
+.info-cards {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    background-color: #dff0ff;
+}
+
+.card {
+    background-color: #a0d9ff;
+    border: 1px solid #ccc;
+    padding: 2rem 2rem;
+        width: 25%;
+    text-align: center;
+        text-align: left;
+        height: 200px;
+        margin: 0 auto;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0;
+    background-color: #dff0ff;
+}
+
+.detail-card {
+    background-color: #a0d9ff;
+    padding: 2rem 2rem;
+    width: 25%;
+    text-align: left;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #e0e0e0;
+}
+
+.lobster-regular {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align form items to the left */
+}
+
+.form-container h1 {
+  margin-bottom: 1rem;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container label {
+  margin-bottom: 0.5rem;
+}
+
+.form-container input {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-container button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container button:hover {
+  background-color: #0056b3;
+}

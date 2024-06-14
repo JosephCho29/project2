@@ -1,0 +1,77 @@
+<!-- views/profiles/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing <%= profile.age %>
+    </title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>Edit <%= profile.age %> at <%= profile.petname %>
+        </h1>
+        <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=PUT" method="POST">
+            <label for="petname">Petname:</label>
+            <input type="text" name="petname" id="petname" value="<%= profile.petname %>">
+            <label for="age">Age:</label>
+            <input type="text" name="age" id="age" value="<%= profile.age %>">
+            <label for="breed">Breed:</label>
+            <input type="text" name="breed" id="breed" value="<%= profile.breed %>">
+            <label for="likesAndDislikes">Likes and Dislikes:</label>
+            <textarea name="likesAndDislikes" id="likesAndDislikes"><%= profile.likesAndDislikes %></textarea>
+            <label for="friendlyToStrangers">Friendly To Strangers?</label>
+            <input type="checkbox" name="friendlyToStrangersCheckbox" id="friendlyToStrangers" <% if
+                (profile.friendlyToStrangers) { %>checked<% } %>>
+                <input type="hidden" name="friendlyToStrangers" id="friendlyToStrangersHidden"
+                    value="<%= profile.friendlyToStrangers %>">
+                <br />
+                <label for="date">Date:</label>
+                <select id="date" name="date">
+                    <option value="Monday" <% if (profile.date==='Monday' ) { %>selected<% } %>>Monday</option>
+                    <option value="Tuesday" <% if (profile.date==='Tuesday' ) { %>selected<% } %>>Tuesday</option>
+                    <option value="Wednesday" <% if (profile.date==='Wednesday' ) { %>selected<% } %>>Wednesday</option>
+                    <option value="Thursday" <% if (profile.date==='Thursday' ) { %>selected<% } %>>Thursday</option>
+                    <option value="Friday" <% if (profile.date==='Friday' ) { %>selected<% } %>>Friday</option>
+                    <option value="Saturday" <% if (profile.date==='Saturday' ) { %>selected<% } %>>Saturday</option>
+                    <option value="Sunday" <% if (profile.date==='Sunday' ) { %>selected<% } %>>Sunday</option>
+                </select>
+
+                <label for="time">Time:</label>
+                <select id="time" name="time">
+                    <option value="0700" <% if (profile.time==='0700' ) { %>selected<% } %>>0700</option>
+                    <option value="0800" <% if (profile.time==='0800' ) { %>selected<% } %>>0800</option>
+                    <option value="0900" <% if (profile.time==='0900' ) { %>selected<% } %>>0900</option>
+                    <option value="1000" <% if (profile.time==='1000' ) { %>selected<% } %>>1000</option>
+                    <option value="1100" <% if (profile.time==='1100' ) { %>selected<% } %>>1100</option>
+                    <option value="1200" <% if (profile.time==='1200' ) { %>selected<% } %>>1200</option>
+                    <option value="1300" <% if (profile.time==='1300' ) { %>selected<% } %>>1300</option>
+                    <option value="1400" <% if (profile.time==='1400' ) { %>selected<% } %>>1400</option>
+                    <option value="1500" <% if (profile.time==='1500' ) { %>selected<% } %>>1500</option>
+                    <option value="1600" <% if (profile.time==='1600' ) { %>selected<% } %>>1600</option>
+                    <option value="1700" <% if (profile.time==='1700' ) { %>selected<% } %>>1700</option>
+                    <option value="1800" <% if (profile.time==='1800' ) { %>selected<% } %>>1800</option>
+                    <option value="1900" <% if (profile.time==='1900' ) { %>selected<% } %>>1900</option>
+                    <option value="2000" <% if (profile.time==='2000' ) { %>selected<% } %>>2000</option>
+                </select>
+                <button type="submit">Update profile</button>
+        </form>
+
+        <script>
+            const checkbox = document.getElementById('friendlyToStrangers');
+            const hiddenInput = document.getElementById('friendlyToStrangersHidden');
+
+            checkbox.addEventListener('change', function () {
+                hiddenInput.value = checkbox.checked;
+            });
+
+            // Set the hidden input value on page load
+            hiddenInput.value = checkbox.checked;
+        </script>
+</body>
+
+</html>

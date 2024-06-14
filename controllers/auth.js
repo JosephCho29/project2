@@ -41,7 +41,9 @@ router.post('/sign-up', async (req, res) => {
       age: req.body.age,
       breed: req.body.breed,
       likesAndDislikes: req.body.likesAndDislikes,
-      friendlyToStrangers: req.body.friendlyToStrangers
+      friendlyToStrangers: req.body.friendlyToStrangers,
+      date: req.body.date,
+      time: req.body.time,
     };
 
     if (req.body.friendlyToStrangers === "on") {

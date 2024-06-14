@@ -5,12 +5,52 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Woof Walks</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
 <body>
-  <%- include('partials/_navbar.ejs') %>
-    <h1>Woof Walks</h1>
-    <p>An for finding you a dog sitter</p>
+  <div><%- include('partials/_navbar.ejs') %></div>
+  <header>
+    <div class="logo"><img src="https://media-be.chewy.com/wp-content/uploads/2022/09/27095535/cute-dogs-pembroke-welsh-corgi.jpg" alt="Cute Dog">
+</div>
+  <div class="homeCaption">Welcome to Woof Walks!</br>An App for finding a dogsitter/walker!</div>
+  </header>
+  <main></main>
+    <section class="info-cards">
+      <div class="card">About Us Text: </div>
+      <div class="card">Pictures of Dogs being walked</div>
+      <div class="card">
+        Upcoming Events:
+        <!-- <add link or embed events in figure ></add> -->
+        </br></br>
+        Upcoming events will be posted here
+
+      </div>
+    </section>
+
+    <section class="details">
+      <div class="detail-card">
+      Hours of Service:</br></br>
+      Monday: 0700-2000</br>
+      Tuesday: 0700-2000</br>
+      Wednesday: 0700-2000</br>
+      Thursday: 0700-2000</br>
+      Friday: 0700-2000</br>
+      Saturday: 0700-2000</br>
+      Sunday: 0700-2000</br>
+      </div>
+      <div class="detail-card">Contact Information</div>
+      <div class="detail-card">Leave a review/e-mail</div>
+    </section>
+  </main>
+
+  <footer>
+    Footer
+  </footer>
+
+  <script src="/script.js"></script>
 </body>
 
 </html>

@@ -7,12 +7,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
 
 <body>
   <%- include('../partials/_navbar.ejs') %>
     <h1>Profile</h1>
-    <a href="/users/<%=user._id%>/profiles/new">Make an Appointment!</a>
     <ul>
       <!-- <% if (profiles) { %> -->
       <% profiles.forEach((profile)=>{ %>

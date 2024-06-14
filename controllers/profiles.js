@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
   try {
     // Look up the user from req.session
     const currentUser = await User.findById(req.session.user._id);
-    console.log(currentUser.profiles)
+    // console.log(currentUser.profiles)
     // Render index.ejs, passing in all of the current user's 
     // profiles as data in the context object. 
     if (!!currentUser) {
@@ -26,10 +26,6 @@ router.get('/', async (req, res) => {
     console.log(error)
     res.redirect('/')
   }
-});
-
-router.get('/new', async (req, res) => {
-  res.render('profiles/new.ejs');
 });
 
 router.post('/', async (req, res) => {
@@ -73,6 +69,7 @@ router.get('/:profileId/edit', async (req, res) => {
   try {
     const currentUser = await User.findById(req.session.user._id);
     const profile = currentUser.profiles.id(req.params.profileId);
+    console.log(profile);
     res.render('profiles/edit.ejs', {
       profile: profile,
     });
@@ -88,11 +85,13 @@ router.put('/:profileId', async (req, res) => {
     const currentUser = await User.findById(req.session.user._id);
     // Find the current profile from the id supplied by req.params
     const profile = currentUser.profiles.id(req.params.profileId);
+    console.log(req.body.friendlyToStrangers);
     // Use the Mongoose .set() method, updating the current profile to reflect the new form data on `req.body`
     profile.set(req.body);
     // Save the current user
     await currentUser.save();
     // Redirect back to the show view of the current profile
+    // console.log("Params", req.params)
     res.redirect(
       `/users/${currentUser._id}/profiles/${req.params.profileId}`
     );

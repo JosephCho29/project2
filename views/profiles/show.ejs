@@ -1,0 +1,52 @@
+<!-- views/profiles/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= profile.petname %>
+  </title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+<%- include('../partials/_navbar.ejs') %>
+  <h1><%= profile.petname %>'s profile<%= profile.company %></h1>
+
+  <% if (profile.age) { %>
+    <p><%= profile.petname %>'s Age: <%= profile.age %></p>
+    <% } %>
+
+  <% if (profile.breed) { %>
+    <p><%= profile.petname %>'s Breed: <%= profile.breed %></p>
+     <% } %>
+
+  <% if (profile.likesAndDislikes) { %>
+    <p><%= profile.petname %>'s Likes and Dislikes: <%= profile.likesAndDislikes %></p>
+    <% } %>
+                
+  <% if (profile.likesAndDislikes) { %>
+    <p><%= profile.petname %> is friendly to strangers!</p>
+    <% } else { %>
+                    
+    <p><%= profile.petname %> is not ready to make friends yet!</p>
+    <% } %>
+
+  <% if (profile.date) { %>
+    <p><%= profile.petname %>'s Date: <%= profile.date %></p>
+    <% } %>
+<% if (profile.time) { %>
+  <p>
+    <%= profile.petname %>'s Time: <%= profile.time %>
+  </p>
+  <% } %>
+    <a href="/users/<%= user._id %>/profiles/<%= profile._id %>/edit">Edit this profile</a>
+    <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=DELETE" method="POST">
+    <button type="submit">Delete this profile</button>
+     </form>
+</body>
+
+</html>

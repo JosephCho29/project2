@@ -4,16 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
+
 <body>
   <%- include('../partials/_navbar.ejs') %>
-    <h1>Sign in</h1>
-    <form action="/auth/sign-in" method="POST">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" required />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" required />
-      <button type="submit">Sign in</button>
-    </form>
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <img src="https://media-be.chewy.com/wp-content/uploads/2022/09/27095535/cute-dogs-pembroke-welsh-corgi.jpg"
+            alt="Cute Dog">
+        </div>
+        <div class="form-container">
+          <form action="/auth/sign-in" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" required />
+            </br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required />
+            </br>
+            <button type="submit">Sign in</button>
+          </form>
+        </div>
+      </div>
+    </header>
 </body>
+
 </html>

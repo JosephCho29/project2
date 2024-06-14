@@ -2,24 +2,12 @@ const mongoose = require('mongoose');
 
 
 const profileSchema = new mongoose.Schema({
-  // company: {
-  //   type: String,
-  //   required: true,
-  // },
-  // title: {
-  //   type: String,
-  //   required: true,
-  // },
-  // notes: {
-  //   type: String,
-  // },
-  // postingLink: {
-  //   type: String,
-  // },
-  // status: {
-  //   type: String,
-  //   enum: ['interested', 'applied', 'interviewing', 'rejected', 'accepted'],
-  // },
+  time: {
+    type: String,
+  },
+  date: {
+    type: String,
+  },
   petname: {
     type: String,
     required: true,
