@@ -11,21 +11,25 @@
   </title>
   <link rel="stylesheet" href="/stylesheets/style.css">
 </head>
-
 <body>
 <%- include('../partials/_navbar.ejs') %>
-  <h1><%= profile.petname %>'s profile<%= profile.company %></h1>
+<div class="logo">
+  <img src="https://media-be.chewy.com/wp-content/uploads/2022/09/27095535/cute-dogs-pembroke-welsh-corgi.jpg"
+    alt="Cute Dog">
+</div>
+<div class="profile-show-container">
+  <h1><%= profile.petname %>'s Profile!<%= profile.company %></h1>
 
   <% if (profile.age) { %>
-    <p><%= profile.petname %>'s Age: <%= profile.age %></p>
+    <p><%= profile.petname %>'s age is <%= profile.age %> years old!</p>
     <% } %>
 
   <% if (profile.breed) { %>
-    <p><%= profile.petname %>'s Breed: <%= profile.breed %></p>
+    <p><%= profile.petname %>'s type of breed is <%= profile.breed %></p>
      <% } %>
 
   <% if (profile.likesAndDislikes) { %>
-    <p><%= profile.petname %>'s Likes and Dislikes: <%= profile.likesAndDislikes %></p>
+    <p><%= profile.petname %>'s Likes and Dislikes these things. Please keep an eye out!: <%= profile.likesAndDislikes %></p>
     <% } %>
                 
   <% if (profile.likesAndDislikes) { %>
@@ -36,17 +40,18 @@
     <% } %>
 
   <% if (profile.date) { %>
-    <p><%= profile.petname %>'s Date: <%= profile.date %></p>
+    <p><%= profile.petname %>'s Date for their walks: <%= profile.date %></p>
     <% } %>
 <% if (profile.time) { %>
   <p>
-    <%= profile.petname %>'s Time: <%= profile.time %>
+    <%= profile.petname %>'s Time for their walks: <%= profile.time %>
   </p>
   <% } %>
-    <a href="/users/<%= user._id %>/profiles/<%= profile._id %>/edit">Edit this profile</a>
+    <a href="/users/<%= user._id %>/profiles/<%= profile._id %>/edit" class="profile-show-link">Edit this profile</a>
     <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=DELETE" method="POST">
     <button type="submit">Delete this profile</button>
      </form>
+    </div>
 </body>
 
 </html>

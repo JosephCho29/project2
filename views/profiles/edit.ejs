@@ -13,6 +13,13 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <img src="https://media-be.chewy.com/wp-content/uploads/2022/09/27095535/cute-dogs-pembroke-welsh-corgi.jpg"
+                        alt="Cute Dog">
+                </div>
+                <div class="signup-form-container">
         <h1>Edit <%= profile.age %> at <%= profile.petname %>
         </h1>
         <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=PUT" method="POST">

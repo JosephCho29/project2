@@ -42,6 +42,7 @@ header {
     /* Align the logo to the start (left) */
     margin-bottom: 20px;
     /* Add space below the logo */
+    padding: 25px;
 }
 
 .logo img {
@@ -67,7 +68,7 @@ header {
 }
 
 nav {
-    margin-top: 10px;
+    margin-top: 0;
     /* Adjust the value to move the navbar higher on the page */
     padding: 10px 20px;
     /* Add padding around the navbar */
@@ -77,9 +78,12 @@ nav {
     gap: 2rem;
     /* Space out the links */
     margin-right: 3rem;
+    background-color: white;
+    width: 100%;
 }
 
 nav a {
+    padding-right: 35px;
     margin: 0 10px;
     /* Add margin to each link for additional spacing */
     text-decoration: none;
@@ -98,6 +102,72 @@ nav a:hover {
     justify-content: space-around;
     padding: 2rem 0;
     background-color: #dff0ff;
+}
+
+.profile-card {
+    background-color: #e74c3c;
+    padding: 1rem;
+    display: inline-block;
+    text-align: left;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 20px;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: block;
+    transition: color 0.2s ease, transform 0.2s ease;
+    /* Add smooth transition for hover effect */
+}
+
+.profile-link:hover {
+    text-decoration: none;
+    /* Ensure no underline on hover */
+    color: #ffd700;
+    /* Change text color on hover */
+    transform: scale(1.05);
+    /* Slightly increase size on hover */
+}
+
+.profile-show-link {
+color: #007bff;
+    /* Set the text color */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 1rem;
+    /* Set the font size */
+    padding: 0.5rem 1rem;
+    /* Add some padding */
+    border: 1px solid #007bff;
+    /* Add a border */
+    border-radius: 5px;
+    /* Add rounded corners */
+    display: inline-block;
+    /* Make it inline-block */
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.profile-show-link:hover {
+    background-color: #007bff;
+    /* Change background color on hover */
+    color: white;
+    /* Change text color on hover */
+    text-decoration: none;
+    /* Ensure no underline on hover */
+}
+
+h1 {
+    margin-left: 35px;
+    /* Add margin to give space from the navbar */
+}
+
+h2 {
+    margin: auto;
+    /* Remove default margin */
 }
 
 .card {
@@ -142,34 +212,30 @@ footer {
     font-weight: 400;
     font-style: normal;
 }
-
-.form-container {
+/* SIGN IN PAGE FORM CSS */
+.signin-form-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align form items to the left */
+  align-items: flex-start; 
 }
 
-.form-container h1 {
-  margin-bottom: 1rem;
-}
-
-.form-container form {
+.signin-form-container form {
   display: flex;
   flex-direction: column;
 }
 
-.form-container label {
+.signin-form-container label {
   margin-bottom: 0.5rem;
 }
 
-.form-container input {
+.signin-form-container input {
   margin-bottom: 1rem;
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.form-container button {
+.signin-form-container button {
   padding: 0.5rem 1rem;
   border: none;
   background-color: #007bff;
@@ -178,6 +244,58 @@ footer {
   cursor: pointer;
 }
 
-.form-container button:hover {
+.signin-form-container button:hover {
   background-color: #0056b3;
+}
+
+/* PROFILE SHOW CONTAINER PAGE */
+
+.profile-show-container button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile-show-container button:hover {
+    background-color: #0056b3;
+}
+
+/* SIGNUP PAGE FORM CSS  */
+.signup-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.signup-form-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.signup-form-container label {
+    margin-bottom: 0.5rem;
+}
+
+.signup-form-container input {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.signup-form-container button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-form-container button:hover {
+    background-color: #0056b3;
 }
