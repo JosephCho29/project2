@@ -1,27 +1,30 @@
-<!-- views/fruits/index.ejs -->
+<!-- views/profiles/index.ejs -->
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Index</title>
-  </head>
-  <a href="/">Home</a>
-  <a href="/profile/new">Sign-Up</a>
-  <a href="">Sign out</a>
-  <body>
-    <h1>Your Woof's Profile</h1>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+</head>
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+    <h1>Profile</h1>
+    <a href="/users/<%=user._id%>/profiles/new">Make an Appointment!</a>
     <ul>
-      <% profile.forEach(profile => { %>
+      <!-- <% if (profiles) { %> -->
+      <% profiles.forEach((profile)=>{ %>
         <h2>
-            <a href="/profile/<%= profile._id %>"> <%= profile.name %> </a>
-            <h3><%= profile.age %></h3>
-            <h3><%= profile.breed %></h3>
-            <h3><%= profile.likesAndDislikes %></h3>
-            <h3><%= profile.friendlyToStrangers %></h3>
+          <!-- Add a link around each title and company, directing to the 'show' page -->
+          <a href="/users/<%= user._id %>/profiles/<%= profile._id %>">
+            <%= profile.petname %>
+          </a>
         </h2>
-      <% }); %>
+        <% }) %>
+          <!-- <% } %> -->
     </ul>
-  </body>
+</body>
+
 </html>

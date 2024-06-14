@@ -1,25 +1,56 @@
+<!-- views/profiles/show.ejs -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Show Page</title>
-  </head>
-  <a href="/">Home</a>
-  <a href="">Sign out</a>
-  <body>
-    <h1><%= profile.name %></h1>
-    <h1><%= profile.age %></h1>
-    <h1><%= profile.breed %></h1>
-    <h1><%= profile.likesAndDislikes %></h1>
-    <h1><% if (profile.friendlyToStrangers) { %>
-        <p>This Woof is friendly to strangers!!</p>
-      <% } else { %>
-        <p>This woof is not friendly yet!</p>
-      <% } %></h1>
-      <form action="/profile/<%=profile._id%>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= profile.name %></button>
-      </form>
-      <a href="/profile/<%= profile._id %>/edit">Edit <%= profile.name %></a>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    <%= profile.title %>
+  </title>
+</head>
+
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+    <h1>
+      <%= profile.petname %>'s Profile<%= profile.company %>
+    </h1>
+
+    <% if (profile.age) { %>
+      <p>
+        <%= profile.petname %>'s Age: <%= profile.age %>
+      </p>
+      <% } %>
+
+        <% if (profile.breed) { %>
+          <p>
+            <%= profile.petname %>'s Breed: <%= profile.breed %>
+          </p>
+          <% } %>
+
+            <% if (profile.likesAndDislikes) { %>
+              <p>
+                <%= profile.petname %>'s Likes and Dislikes: <%= profile.likesAndDislikes %>
+              </p>
+              <% } %>
+                <% if (profile.likesAndDislikes) { %>
+                  <p>
+                    <%= profile.petname %> is friendly to strangers!
+                  </p>
+                  <% } else { %>
+                    <p>
+                      <%= profile.petname %> is not ready to make friends yet!
+                    </p>
+                    <% } %>
+
+                      <a href="/users/<%= user._id %>/profiles/<%= profile._id %>/edit">
+                        Edit this profile
+                      </a>
+                      <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=DELETE" method="POST">
+                        <button type="submit">Delete this profile</button>
+                      </form>
+                      <a href="/users/<%=user._id%>/profiles/new">Make an Appointment!</a>
+</body>
+
 </html>

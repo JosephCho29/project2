@@ -6,21 +6,35 @@
   <title>Sign Up</title>
 </head>
 <body>
-  <h1>Create a new account!</h1>
-  <form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input 
-      type="password"
-      name="confirmPassword"
-      id="confirmPassword"
-      required 
-    />
-    <button type="submit">Sign up</button>
-  </form>
+  <%- include('../partials/_navbar.ejs') %>
+    <h1>Create a new account!</h1>
+    <form action="/auth/sign-up" method="POST">
+      <label for="username">Username:</label>
+      <input type="text" name="username" id="username" required />
+      <br />
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required />
+      <br />
+      <label for="confirmPassword">Confirm Password:</label>
+      <input type="password" name="confirmPassword" id="confirmPassword" required />
+      <br />
+      <label for="petname">Your Pet's Name!:</label>
+      <input type="text" name="petname" id="petname" required />
+      <br />
+      <label for="age">Age:</label>
+      <input type="number" name="age" id="age" required />
+      <br />
+      <label for="breed">Breed:</label>
+      <input type="text" name="breed" id="breed" required />
+      <br />
+      <label for="likesAndDislikes">Likes and Dislikes:</label>
+      <input type="text" name="likesAndDislikes" id="likesAndDislikes" required />
+      <br />
+      <label for="friendlyToStrangers">Friendly to strangers?</label>
+      <input type="checkbox" name="friendlyToStrangers" id="friendlyToStrangers" required />
+      <br />
+      <!-- ADD CHECKBOX FOR FRIENDLY TO STRANGERS -->
+      <button type="submit">Sign up</button>
+    </form>
 </body>
 </html>
-

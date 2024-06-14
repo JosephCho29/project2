@@ -1,25 +1,57 @@
+<!-- views/profiles/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing <%= profile.title %>
+    </title>
+</head>
+
 <body>
-    <!-- update the header -->
-    <h1>Edit <%= profile.name %></h1>
-        <form action="/profile/<%=profile._id%>?_method=PUT" method="POST">
-        <label for="name">Name:</label>
-        <input type="text" name="name" value="<%= profile.name %>" />
-        <br/>
-        <label for="age">Age:</label>
-        <input type="number" name="age" value="<%= profile.age %>" />
-        <br/>
-        <label for="breed">Breed:</label>
-        <input type="text" name="breed" value="<%= profile.breed %>" />
-        <br/>
-        <label for="likesAndDislikes">Likes and Dislikes:</label>
-        <input type="text" name="likesAndDislikes" value="<%= profile.likesAndDislikes %>" />
-        <br/>
-        <label for="friendlyToStrangers">Friendly To Strangers?</label>
-        <input type="checkbox" name="friendlyToStrangers" <% if (profile.friendlyToStrangers) { %>checked<% } %> >
-        <br/>
-    <!-- update the button text -->
-        <button type="submit">Update profile</button>
-    </form>
-    <a href="/profile">Back to profiles</a>
- </body>
-  
+    <%- include('../partials/_navbar.ejs') %>
+        <h1>Edit <%= profile.title %> at <%= profile.company %>
+        </h1>
+        <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=PUT" method="POST">
+            <label for="company">Company:</label>
+            <input type="text" name="company" id="company" value="<%= profile.company %>">
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" value="<%= profile.title %>">
+            <label for="notes">Notes:</label>
+            <textarea name="notes" id="notes"><%= profile.notes %></textarea>
+            <label for="postingLink">Posting Link:</label>
+            <input type="text" name="postingLink" id="postingLink" value="<%= profile.postingLink %>">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+                <option value="interested" <%=profile.status==="interested" ? "selected" : "" %>
+                    >
+                    Interested
+                </option>
+                <option value="applied" <%=profile.status==="applied" ? "selected" : "" %>
+                    >
+                    Applied
+                </option>
+                <option value="interviewing" <%=profile.status==="interviewing" ? "selected" : "" %>
+                    >
+                    Interviewing
+                </option>
+                <option value="rejected" <%=profile.status==="rejected" ? "selected" : "" %>
+                    >
+                    Rejected
+                </option>
+                <option value="accepted" <%=profile.status==="accepted" ? "selected" : "" %>
+                    >
+                    Accepted
+                </option>
+            </select>
+            <label for="friendlyToStrangers">Friendly To Strangers?</label>
+            <input type="checkbox" name="friendlyToStrangers" <% if (profile.friendlyToStrangers) { %>checked<% } %> >
+                <br />
+                <button type="submit">Update profile</button>
+
+        </form>
+</body>
+
+</html>
