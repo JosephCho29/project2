@@ -20,8 +20,7 @@
                         alt="Cute Dog">
                 </div>
                 <div class="signup-form-container">
-        <h1>Edit <%= profile.age %> at <%= profile.petname %>
-        </h1>
+        <h1>Edit <%= profile.petname %>'s' profile!</h1>
         <form action="/users/<%= user._id %>/profiles/<%= profile._id %>?_method=PUT" method="POST">
             <label for="petname">Petname:</label>
             <input type="text" name="petname" id="petname" value="<%= profile.petname %>">
